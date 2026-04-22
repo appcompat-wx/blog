@@ -1,0 +1,69 @@
+// Layout config
+$content-max-width: 52rem;
+$sidebar-width: 16rem;
+
+// Define our colors
+$color-white: hsl(160, 16%, 80%);
+$color-amber: hsl(32, 100%, 62%);
+$color-pink: hsl(350, 90%, 60%);
+$color-purple: hsl(260, 80%, 40%);
+$color-purple-dark: hsl(300, 80%, 20%);
+$color-dark-gray: hsl(0, 0%, 8%);
+$color-black: black;
+$color-blue: hsl(207, 100%, 65%);
+$color-gray: hsla(0, 0%, 50%, 0.25);
+$color-brown: hsl(30, 5%, 10%);
+
+// Define our palette
+$color-primary: $color-amber;
+$color-secondary: $color-pink;
+$color-tertiary: $color-white;
+
+$color-lighten: hsla(0, 100%, 100%, 0.3);
+$color-darken: hsla(0, 0%, 0%, 0.3);
+
+$default-transition-duration: 200ms;
+
+$image-scan-lines: repeating-linear-gradient(
+    transparent 0px,
+    transparent 1px,
+    hsla(0, 0%, 20%, 0.2) 2px,
+    hsla(0, 0%, 20%, 0.2) 3px
+);
+
+@mixin border($color: $color-primary) {
+    border: {
+        width: 2px;
+        radius: 1px;
+        style: solid;
+        color: $color;
+    }
+    box-shadow: 0 0 0.5rem -0.25rem $color, inset 0 0 0.5rem -0.25rem $color;
+}
+
+@mixin container($width: $content-max-width) {
+    max-width: $width;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@mixin transition {
+    transition: {
+        property: border-color, background-color, background-position, background-size, color, box-shadow, opacity;
+        duration: $default-transition-duration;
+        timing-function: ease;
+    }
+}
+
+@import "vendor/sanitize";
+@import "fonts";
+@import "text";
+@import "layout";
+@import "nav";
+@import "theme";
+@import "forms";
+@import "vendor/highlightjs/tomorrow-night-eighties";
+@import "mermaid";
+@import "comments";

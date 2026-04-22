@@ -1,0 +1,34 @@
+body {
+    background-color: $color-dark-gray;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAARklEQVR42u3U0QkAIAhAQe2//QdtAFsiKvBuAeGJRgAAAAAAAABcUFXz5fzRfQECdA+QP958Zi5P0AkIIAAAAAAAAABwzAbVywoigh1x+wAAAABJRU5ErkJggg==");
+    background-position: center 48px;
+
+    ::-moz-selection, ::selection {
+        background: fade-out($color-primary, 0.5);
+    }
+}
+
+figure {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1px;
+    background: $color-primary;
+    border: 2px solid fade-out($color-primary, 0.5);
+    box-shadow: 0 0 1rem fade-out($color-primary, 0.5);
+    opacity: 0.9;
+
+    figcaption {
+        margin: 0.5rem;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: $image-scan-lines;
+    }
+}

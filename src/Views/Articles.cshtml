@@ -1,0 +1,12 @@
+@{
+    Layout = "Layout";
+    ViewData["Title"] = "Articles";
+}
+@model IEnumerable<Blog.Article>
+
+<h1>Articles</h1>
+
+@foreach (var article in Model)
+{
+    @await Html.PartialAsync("ArticleSummary", article)
+}

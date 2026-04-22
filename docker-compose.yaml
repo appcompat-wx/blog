@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    image: "ghcr.io/sagebind/blog/app:${TAG:-latest}"
+    ports:
+      - 5000:80
